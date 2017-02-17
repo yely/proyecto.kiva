@@ -7,6 +7,8 @@ import android.widget.TextView;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.NetworkImageView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,13 +29,27 @@ public class DetalleActivity extends AppCompatActivity {
             ((TextView) findViewById(R.id.uso)).setText(json.getString("use"));
 
             JSONObject imagenJSON = json.getJSONObject("image");
-            int idImagen = imagenJSON.getInt("id");
-            int idPlantilla = imagenJSON.getInt("id_template");
+            final int idImagen = imagenJSON.getInt("id");
+            final int idPlantilla = imagenJSON.getInt("id_template");
+            final String patronURL;
 
-            JsonArrayRequest plantilla = new JsonArrayRequest("", new Response.Listener<JSONArray>() {
+            JsonObjectRequest plantillaRequest = new JsonObjectRequest("http://api.kivaws.org/v1/templates/images.json", new Response.Listener<JSONObject>() {
                 @Override
-                public void onResponse(JSONArray response) {
+                public void onResponse(JSONObject response) {
+                    try {
+                        String patronURL;
+                        JSONArray plantillas = response.getJSONArray("templates");
+                        for (int i = 0; i < plantillas.length(); i++) {
+                            JSONObject patron = plantillas.getJSONObject(i);
+                            if (patron.getInt("id") == idPlantilla) {
+                                patronURL = patron.getString("pattern");
+                                cargarImagen(patronURL, idImagen);
+                                break;
+                            }
+                        }
+                    } catch (JSONException excepcion) {
 
+                    }
                 }
             }, new Response.ErrorListener() {
                 @Override
@@ -41,14 +57,18 @@ public class DetalleActivity extends AppCompatActivity {
 
                 }
             });
-
+            MySingleton.getInstance(this).getRequestQueue().add(plantillaRequest);
 
         } catch (JSONException excepcion) {
 
         }
     }
 
-    protected  void onResume() {
+    private void cargarImagen(String patronURL, int idImagen) {
+        String url = patronURL.replace("<size>", "400");
+        url = url.replace("<id>", "" + idImagen);
 
+        NetworkImageView imagen = (NetworkImageView) findViewById(R.id.imagen);
+        imagen.setImageUrl(url, MySingleton.getInstance(this).getImageLoader());
     }
 }
