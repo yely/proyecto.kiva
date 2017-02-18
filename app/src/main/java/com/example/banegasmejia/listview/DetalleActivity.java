@@ -2,6 +2,7 @@ package com.example.banegasmejia.listview;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.android.volley.Response;
@@ -15,18 +16,21 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class DetalleActivity extends AppCompatActivity {
-    JSONObject json;
+    String jsonString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle);
 
+        jsonString = getIntent().getStringExtra("JSONObject");
+
         try {
-            ((TextView) findViewById(R.id.nombre)).setText(json.getString("name"));
-            ((TextView) findViewById(R.id.pais)).setText(json.getJSONObject("location").getString("country"));
-            ((TextView) findViewById(R.id.cantidad)).setText(json.getString("loan_amount"));
-            ((TextView) findViewById(R.id.uso)).setText(json.getString("use"));
+            JSONObject json = new JSONObject(jsonString);
+            ((TextView) findViewById(R.id._nombre)).setText(json.getString("name"));
+            ((TextView) findViewById(R.id._pais)).setText(json.getJSONObject("location").getString("country"));
+            ((TextView) findViewById(R.id._cantidad)).setText(json.getString("loan_amount"));
+            ((TextView) findViewById(R.id._uso)).setText(json.getString("use"));
 
             JSONObject imagenJSON = json.getJSONObject("image");
             final int idImagen = imagenJSON.getInt("id");
@@ -39,29 +43,40 @@ public class DetalleActivity extends AppCompatActivity {
                     try {
                         String patronURL;
                         JSONArray plantillas = response.getJSONArray("templates");
+                        if (plantillas == null) {
+                            Log.d("DetalleActivity", "Plantilla es null");
+                        }
                         for (int i = 0; i < plantillas.length(); i++) {
                             JSONObject patron = plantillas.getJSONObject(i);
                             if (patron.getInt("id") == idPlantilla) {
                                 patronURL = patron.getString("pattern");
                                 cargarImagen(patronURL, idImagen);
                                 break;
+                            } else {
+                                Log.d("DetalleActivity", "is no coincide");
                             }
                         }
                     } catch (JSONException excepcion) {
 
+                        Log.d("DetalleActivity", "JSON Exception");
                     }
                 }
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-
+                    Log.d("DetalleActivity", "Error al cargar imagen");
                 }
             });
             MySingleton.getInstance(this).getRequestQueue().add(plantillaRequest);
 
         } catch (JSONException excepcion) {
 
+        } catch (Exception excepcion) {
+
+            Log.d("DetalleActivity", excepcion.getMessage());
         }
+
+        Log.d("DetalleActivity", "Terminar de crear actividad");
     }
 
     private void cargarImagen(String patronURL, int idImagen) {
@@ -70,5 +85,7 @@ public class DetalleActivity extends AppCompatActivity {
 
         NetworkImageView imagen = (NetworkImageView) findViewById(R.id.imagen);
         imagen.setImageUrl(url, MySingleton.getInstance(this).getImageLoader());
+
+        Log.d("DetalleActivity", "Cargando imagen");
     }
 }

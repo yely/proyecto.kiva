@@ -1,6 +1,7 @@
 package com.example.banegasmejia.listview;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,13 +27,13 @@ public class CeldaAdaptador extends ArrayAdapter<JSONObject> {
         super(context,resourse,items);
     }
     @Override
-    public View getView(int position, View convertView, ViewGroup parent)
+    public View getView(final int position, final View convertView, ViewGroup parent)
     {
         View celda = convertView;
         if (celda==null)
         {
             LayoutInflater layoutInflater = LayoutInflater.from(getContext());
-            celda= layoutInflater.inflate(R.layout.celda_adaptador,null);
+            celda = layoutInflater.inflate(R.layout.celda_adaptador,null);
         }
 
         TextView id = (TextView) celda.findViewById(R.id.id);
@@ -42,9 +43,9 @@ public class CeldaAdaptador extends ArrayAdapter<JSONObject> {
 
         JSONObject elemento=this.getItem(position);
         try {
-            id.setText(elemento.getString("shortname"));
-            nombre.setText(elemento.getString("category"));
-            ubicacion.setText(elemento.getString("description"));
+            id.setText(elemento.getString("name"));
+            nombre.setText(elemento.getString("loan_amount"));
+            ubicacion.setText(elemento.getString("use"));
 
             String imagen=elemento.getString("id");
             int img= Integer.parseInt(imagen);
@@ -54,6 +55,16 @@ public class CeldaAdaptador extends ArrayAdapter<JSONObject> {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        celda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), DetalleActivity.class);
+                intent.putExtra("JSONObject", getItem(position).toString());
+                getContext().startActivity(intent);
+            }
+        });
+
         return celda;
     }
 

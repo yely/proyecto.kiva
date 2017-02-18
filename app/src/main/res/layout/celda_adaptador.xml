@@ -44,19 +44,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/id"
-                        android:textSize="18sp"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/holo_green_dark" />
+                        android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
                     <TextView
                         android:text="TextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/nombre"
-                        android:textSize="14sp"
-                        android:textAlignment="viewStart"
-                        android:textStyle="normal|bold"
-                        android:textColor="@color/colorAccent" />
+                        android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
                     <TextView
                         android:text="TextView"

@@ -12,57 +12,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Yely\Desktop\ListView\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
-        <dex dex="C:\Users\Yely\Desktop\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.1.1_ed89d786fd501af45f0e342282ed7a4d24661dfd\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Yely\Desktop\ListView\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
-        <dex dex="C:\Users\Yely\Desktop\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.1_6ee9c3cb31eb5e4d7cbeef0de989bf569e58b329\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Yely\Desktop\ListView\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="16de5da939492f518e080419a35ff48a4d1692a1">
-        <dex dex="C:\Users\Yely\Desktop\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_369ca038501832d363afc12a67d8302997d52ff3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Yely\Desktop\ListView\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
-        <dex dex="C:\Users\Yely\Desktop\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.1.1_540ff3025de18db3e417703e3a13fc5e9f06dd6c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Yely\Desktop\ListView\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
-        <dex dex="C:\Users\Yely\Desktop\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.1.1_76ca2ef68bef7b80a0a948a1da6100ae1761df3a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\Yely\Desktop\ListView\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="7060420ffb029e2cb832178b464b2fdfb4ecc85a">
         <dex dex="C:\Users\Yely\Desktop\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_f55f9a34bc2e67646b05f7e501dcc771a07d3175\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Yely\Desktop\ListView\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
+        <dex dex="C:\Users\Yely\Desktop\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.1.1_ed89d786fd501af45f0e342282ed7a4d24661dfd\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -93,12 +57,39 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\Yely\Desktop\ListView\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="C:\Users\Yely\Desktop\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.1_6ee9c3cb31eb5e4d7cbeef0de989bf569e58b329\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Yely\Desktop\ListView\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
         <dex dex="C:\Users\Yely\Desktop\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.1.1_8bf08ed8efe870bb21e5fea23a5ad5738e7c9d83\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Yely\Desktop\ListView\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d57c978d2eacab4b6b97d762af4bc8873d5e6a9d">
+        <dex dex="C:\Users\Yely\Desktop\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_369ca038501832d363afc12a67d8302997d52ff3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Yely\Desktop\ListView\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
+        <dex dex="C:\Users\Yely\Desktop\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.1.1_540ff3025de18db3e417703e3a13fc5e9f06dd6c\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -117,6 +108,15 @@
         revision="25.0.2"
         sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
         <dex dex="C:\Users\Yely\Desktop\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.1.1_4d0f87de435461afdf10a0da9797a192d1fd708b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Yely\Desktop\ListView\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="C:\Users\Yely\Desktop\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.1.1_76ca2ef68bef7b80a0a948a1da6100ae1761df3a\classes.dex" />
     </item>
 
 </items>

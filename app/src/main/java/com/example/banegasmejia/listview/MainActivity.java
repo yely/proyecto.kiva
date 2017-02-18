@@ -3,6 +3,7 @@ package com.example.banegasmejia.listview;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
 
 import com.android.volley.Response;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mContext=this;
-        String url="http://api.kivaws.org/v1/teams/search.json";
+        String url="http://api.kivaws.org/v1/loans/newest.json";
         getKivaLoans(url);
     }
 
@@ -36,10 +37,11 @@ public class MainActivity extends AppCompatActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+                        Log.d("MainActivity", "Procesando respuesta");
 
                         Logger.getAnonymousLogger().log(Level.INFO,response.toString());
                         try {
-                            JSONArray loans=response.getJSONArray("teams");
+                            JSONArray loans=response.getJSONArray("loans");
 
                             ArrayList<JSONObject> dataSourse=new ArrayList<JSONObject>();
                             for(int i=0;i<loans.length();i++)
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                         Logger.getAnonymousLogger().log(Level.SEVERE,"Error Fataliti");
 
 
+                        Log.d("MainActivity", "" + error.getMessage());
                     }
                 }
         );

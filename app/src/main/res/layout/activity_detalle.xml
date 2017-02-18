@@ -14,7 +14,7 @@
     <com.android.volley.toolbox.NetworkImageView
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:id="@+id/imagen"
+        android:id="@+id/_imagen"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true" />
@@ -23,31 +23,31 @@
         android:text="Nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/nombre"
-        android:layout_below="@+id/imagen"
+        android:id="@+id/_nombre"
+        android:layout_below="@+id/_imagen"
         android:layout_alignParentStart="true" />
 
     <TextView
         android:text="Pais"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/nombre"
+        android:layout_below="@+id/_nombre"
         android:layout_alignParentStart="true"
-        android:id="@+id/pais" />
+        android:id="@+id/_pais" />
 
     <TextView
         android:text="Cantidad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/pais"
+        android:layout_below="@+id/_pais"
         android:layout_alignParentStart="true"
-        android:id="@+id/cantidad" />
+        android:id="@+id/_cantidad" />
 
     <TextView
         android:text="Uso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/cantidad"
+        android:layout_below="@+id/_cantidad"
         android:layout_alignParentStart="true"
-        android:id="@+id/uso" />
+        android:id="@+id/_uso" />
 </RelativeLayout>
